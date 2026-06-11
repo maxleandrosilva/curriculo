@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Max Leandro dos Santos Silva — Currículo Profissional</title>
+<style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    width: 100%;
+    font-family: "Segoe UI", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    background: #ffffff;
+    font-size: 9.5pt;
+    line-height: 1.5;
+  }
+
+  /* ==================== HEADER ==================== */
+  .header {
+    background: #0b1a2e;
+    color: #ffffff;
+    padding: 30px 36px 24px 36px;
+  }
+  .name {
+    font-size: 27pt;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    margin-bottom: 7px;
+  }
+  .gold-bar {
+    width: 55px;
+    height: 3px;
+    background: #c8a84e;
+    margin-bottom: 9px;
+  }
+  .headline {
+    font-size: 10.5pt;
+    color: #94a3b8;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  /* ==================== CONTACT STRIP ==================== */
+  .contact-strip {
+    background: #101f38;
+    padding: 9px 36px;
+    font-size: 8.5pt;
+    color: #7b8da3;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px 22px;
+    align-items: center;
+  }
+  .contact-strip a { color: #7b8da3; text-decoration: none; }
+  .c-label { color: #c8a84e; font-weight: 600; margin-right: 3px; }
+
+  /* ==================== BODY ==================== */
+  .body-wrap {
+    display: flex;
+    background: #eaeff4;
+    min-height: calc(100vh - 140px);
+  }
+
+  /* ==================== SIDEBAR ==================== */
+  .sidebar {
+    width: 228px;
+    min-width: 228px;
+    background: #eaeff4;
+    padding: 22px 16px 30px 22px;
+    font-size: 8.6pt;
+    color: #2a3a50;
+    line-height: 1.45;
+  }
+  .sb { margin-bottom: 18px; }
+  .sb-title {
+    font-size: 8.8pt;
+    font-weight: 700;
+    color: #0b1a2e;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding-bottom: 4px;
+    border-bottom: 2px solid #c8a84e;
+    margin-bottom: 8px;
+  }
+  .sb .lbl {
+    font-weight: 600;
+    color: #0b1a2e;
+    font-size: 8.4pt;
+    margin-top: 6px;
+    margin-bottom: 0;
+  }
+  .sb .val {
+    color: #3d4f65;
+    font-size: 8.6pt;
+    margin-bottom: 0;
+  }
+
+  /* Badges */
+  .badges { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 6px; }
+  .badge {
+    background: #0b1a2e;
+    color: #ffffff;
+    padding: 3px 11px;
+    border-radius: 3px;
+    font-size: 7.8pt;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+  }
+  .badge-note {
+    margin-top: 5px;
+    font-size: 7.5pt;
+    color: #5a6a7e;
+  }
+
+  /* Skill bars */
+  .skill-item { margin-bottom: 7px; }
+  .skill-label { font-size: 8.4pt; color: #2a3a50; margin-bottom: 2px; }
+  .skill-track {
+    height: 5px;
+    background: #cdd5df;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .skill-fill {
+    height: 100%;
+    background: #c8a84e;
+    background: linear-gradient(90deg, #c8a84e, #d4b85c);
+    border-radius: 3px;
+  }
+
+  /* Languages */
+  .lang { margin-bottom: 4px; }
+  .lang-name { font-weight: 600; color: #0b1a2e; font-size: 8.6pt; }
+  .lang-lvl { color: #5a6a7e; font-size: 8.2pt; }
+
+  /* ==================== MAIN ==================== */
+  .main {
+    flex: 1;
+    background: #ffffff;
+    padding: 22px 30px 30px 24px;
+  }
+  .sec-title {
+    font-size: 11pt;
+    font-weight: 700;
+    color: #0b1a2e;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding-left: 12px;
+    border-left: 3.5px solid #c8a84e;
+    margin-top: 16px;
+    margin-bottom: 10px;
+  }
+  .sec-title:first-child, .sec-title.first { margin-top: 0; }
+
+  /* Summary */
+  .summary p {
+    margin-bottom: 6px;
+    text-align: justify;
+    color: #2d3748;
+    font-size: 9.5pt;
+    line-height: 1.55;
+  }
+
+  /* Experience */
+  .exp { margin-bottom: 14px; page-break-inside: avoid; }
+  .exp-company { font-size: 10.5pt; font-weight: 700; color: #0b1a2e; }
+  .exp-role { font-size: 9.5pt; color: #374151; font-weight: 500; }
+  .exp-meta { font-size: 8.3pt; color: #6b7280; margin-bottom: 5px; }
+  .exp-loc { color: #9ca3af; }
+  .exp p { font-size: 9.5pt; color: #2d3748; margin-bottom: 4px; line-height: 1.5; }
+  .exp ul { margin: 3px 0 5px 0; padding-left: 14px; }
+  .exp ul li { font-size: 9.3pt; color: #374151; margin-bottom: 2px; line-height: 1.42; }
+  .exp-note {
+    font-size: 9pt;
+    color: #4a5568;
+    font-style: italic;
+    margin-top: 4px;
+    line-height: 1.45;
+  }
+
+  /* Education */
+  .edu-school { font-size: 10.5pt; font-weight: 700; color: #0b1a2e; }
+  .edu-deg { font-size: 9.5pt; color: #374151; }
+  .edu-period { font-size: 8.5pt; color: #6b7280; }
+
+  @media print {
+    .header { background: #0b1a2e !important; }
+    .contact-strip { background: #101f38 !important; }
+    .sidebar { background: #eaeff4 !important; }
+    .badge { background: #0b1a2e !important; color: #ffffff !important; }
+    .skill-fill { background: #c8a84e !important; }
+    .body-wrap { min-height: auto; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ========================================== -->
+<!-- HEADER                                      -->
+<!-- ========================================== -->
+<header class="header">
+  <h1 class="name">Max Leandro dos Santos Silva</h1>
+  <div class="gold-bar"></div>
+  <p class="headline">Eletricista Industrial | Técnico em Mecatrônica | Sistemas Elétricos Offshore &amp; Subsea | CBSP | HUET</p>
+</header>
+
+<!-- ========================================== -->
+<!-- FAIXA DE CONTATO                            -->
+<!-- ========================================== -->
+<div class="contact-strip">
+  <span><span class="c-label">E-mail:</span> <a href="mailto:contato.maxx@outlook.com">contato.maxx@outlook.com</a></span>
+  <span><span class="c-label">WhatsApp:</span> (21) 99473-3400</span>
+  <span><span class="c-label">Tel. Principal:</span> (21) 99473-3400</span>
+  <span><span class="c-label">Tel. Alternativo:</span> (21) 99754-9536</span>
+  <span><span class="c-label">LinkedIn:</span> <a href="https://www.linkedin.com/in/maxsilva01">linkedin.com/in/maxsilva01</a></span>
+</div>
+
+<!-- ========================================== -->
+<!-- CORPO — SIDEBAR + MAIN                      -->
+<!-- ========================================== -->
+<div class="body-wrap">
+
+  <!-- ========== SIDEBAR ========== -->
+  <aside class="sidebar">
+
+    <div class="sb">
+      <div class="sb-title">Dados Pessoais</div>
+      <p class="lbl">Data de Nascimento</p>
+      <p class="val">03/01/1986</p>
+      <p class="lbl">CPF</p>
+      <p class="val">118.953.287-56</p>
+      <p class="lbl">Registro Profissional (CFT)</p>
+      <p class="val">1189328756</p>
+      <p class="lbl">Endereço</p>
+      <p class="val">Rua Waldemar de Assis Ribeiro, 357</p>
+      <p class="val">Apartamento 307 – Bloco A</p>
+      <p class="val">Bairro Alto</p>
+      <p class="val">Teresópolis – RJ</p>
+      <p class="val">CEP 25959-215</p>
+    </div>
+
+    <div class="sb">
+      <div class="sb-title">Certificações Offshore</div>
+      <div class="badges">
+        <span class="badge">CBSP</span>
+        <span class="badge">HUET</span>
+      </div>
+      <p class="badge-note">Concluídas em 2025</p>
+    </div>
+
+    <div class="sb">
+      <div class="sb-title">Competências</div>
+      <div class="skill-item">
+        <div class="skill-label">Manutenção Elétrica</div>
+        <div class="skill-track"><div class="skill-fill" style="width:95%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-label">Manutenção Industrial</div>
+        <div class="skill-track"><div class="skill-fill" style="width:92%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-label">Distribuição de Energia</div>
+        <div class="skill-track"><div class="skill-fill" style="width:90%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-label">Diagnóstico Elétrico</div>
+        <div class="skill-track"><div class="skill-fill" style="width:92%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-label">Painéis Elétricos</div>
+        <div class="skill-track"><div class="skill-fill" style="width:88%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-label">Motores e Acionamentos</div>
+        <div class="skill-track"><div class="skill-fill" style="width:85%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-label">Instrumentação</div>
+        <div class="skill-track"><div class="skill-fill" style="width:75%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-label">Automação Industrial</div>
+        <div class="skill-track"><div class="skill-fill" style="width:72%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-label">Sistemas ROV</div>
+        <div class="skill-track"><div class="skill-fill" style="width:45%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-label">Equipamentos Subsea</div>
+        <div class="skill-track"><div class="skill-fill" style="width:45%"></div></div>
+      </div>
+    </div>
+
+    <div class="sb">
+      <div class="sb-title">Idiomas</div>
+      <div class="lang">
+        <span class="lang-name">Português</span>
+        <span class="lang-lvl">— Nativo</span>
+      </div>
+      <div class="lang">
+        <span class="lang-name">Inglês</span>
+        <span class="lang-lvl">— Básico</span>
+ <div class="lang">
+        <span class="lang-name">Espanhol</span>
+        <span class="lang-lvl">— Intermediário</span>
+      </div>
+      </div>
+    </div>
+
+  </aside>
+
+  <!-- ========== MAIN ========== -->
+  <main class="main">
+
+    <h2 class="sec-title first">Resumo Profissional</h2>
+
+    <div class="summary">
+      <p>Eletricista Industrial com mais de 10 anos de experiência em ambientes de alta criticidade, atuando em manutenção elétrica, sistemas de potência, operação de subestações, geração e distribuição de energia e suporte à produção contínua.</p>
+      <p>Experiência consolidada em manutenção preventiva, preditiva e corretiva, diagnóstico de falhas, resolução de problemas técnicos, confiabilidade operacional e atendimento a sistemas elétricos críticos. Forte atuação em segurança, análise de risco e cumprimento rigoroso de normas técnicas, com foco em disponibilidade e integridade operacional.</p>
+      <p>Atualmente direciono minha carreira para o setor offshore de óleo &amp; gás, com preparação técnica voltada a sistemas eletroeletrônicos offshore, operações subsea e suporte a ROV (Veículo Operado Remotamente). Em 2025 concluí as certificações obrigatórias CBSP e HUET, consolidando minha prontidão para atuação embarcada.</p>
+      <p>Minha experiência em sistemas de potência, painéis elétricos, motores, bombas e diagnóstico de equipamentos críticos fornece base sólida para atividades de manutenção elétrica offshore, suporte técnico a sistemas subsea e operações de ROV, onde confiabilidade, resposta rápida a falhas e disciplina operacional são essenciais.</p>
+      <p>Busco integrar equipes offshore de alto desempenho como Técnico Eletricista ROV / Subsea (Trainee), contribuindo para segurança, eficiência e continuidade operacional por meio de mentalidade de confiabilidade, aprendizado contínuo e forte cultura de segurança.</p>
+    </div>
+
+    <h2 class="sec-title">Experiência Profissional</h2>
+
+    <!-- Grupo JFC -->
+    <div class="exp">
+      <p class="exp-company">Grupo JFC</p>
+      <p class="exp-role">Eletricista Industrial</p>
+      <p class="exp-meta">Março de 2021 – Presente (4 anos e 4 meses) <span class="exp-loc">· Teresópolis, RJ</span></p>
+      <p>Manutenção elétrica de sistemas de potência, motores, bombas, painéis e equipamentos industriais críticos em ambiente de produção contínua.</p>
+      <ul>
+        <li>Manutenção preventiva, preditiva e corretiva com foco em confiabilidade e disponibilidade de sistemas elétricos críticos</li>
+        <li>Diagnóstico de falhas e análise de causa raiz em distribuição de energia, painéis de controle e equipamentos rotativos</li>
+        <li>Operação de subestações e suporte à distribuição de energia em condições de alta demanda</li>
+        <li>Liderança técnica, orientação de equipe e treinamento em procedimentos de manutenção e práticas de segurança</li>
+        <li>Forte conformidade com normas de segurança, avaliação de riscos e atuação em ambientes de alta criticidade</li>
+      </ul>
+      <p class="exp-note">A experiência desenvolvida em diagnóstico elétrico, distribuição de energia e confiabilidade de equipamentos fornece base técnica aplicável à manutenção elétrica offshore, suporte a sistemas subsea e operações de ROV.</p>
+    </div>
+
+    <!-- Blue Vec Hub -->
+    <div class="exp">
+      <p class="exp-company">Blue Vec Hub — Especialização em Sistemas Subsea</p>
+      <p class="exp-role">Formação Técnica em ROV e Sistemas Subsea</p>
+      <p class="exp-meta">Janeiro de 2025 – Presente (6 meses)</p>
+      <p>Capacitação técnica direcionada a sistemas de ROV (Veículo Operado Remotamente) e operações subsea aplicadas ao setor de óleo e gás offshore.</p>
+      <p>Estudo dos subsistemas elétricos, eletrônicos, hidráulicos e de controle de ROV, incluindo distribuição de potência subsea, sistemas umbilicais, unidade de potência hidráulica (HPU), sensores e arquitetura operacional.</p>
+      <p>Treinamento focado em diagnóstico de falhas, interpretação de diagramas técnicos, manutenção de sistemas críticos, procedimentos operacionais e cultura de segurança offshore.</p>
+      <p class="exp-note">Formação construída sobre sólida base em manutenção elétrica industrial, sistemas de potência e confiabilidade operacional. Direcionamento profissional para atuação como Técnico de ROV / Piloto de ROV em operações offshore.</p>
+    </div>
+
+    <!-- Autônomo -->
+    <div class="exp">
+      <p class="exp-company">Autônomo</p>
+      <p class="exp-role">Eletricista Industrial — Prestação de Serviços</p>
+      <p class="exp-meta">Novembro de 2016 – Fevereiro de 2021 (4 anos e 4 meses)</p>
+      <p>Prestação de serviços de manutenção elétrica para clientes industriais e comerciais, com foco em diagnóstico de falhas, confiabilidade de equipamentos e segurança elétrica.</p>
+      <ul>
+        <li>Instalação, reparo e manutenção preventiva de sistemas elétricos, painéis, motores e circuitos de distribuição</li>
+        <li>Diagnóstico de falhas e intervenções corretivas em equipamentos críticos</li>
+        <li>Atendimento direto ao cliente, planejamento de atividades de manutenção e resolução técnica de problemas</li>
+        <li>Aplicação de normas de segurança e procedimentos de controle de risco</li>
+      </ul>
+      <p class="exp-note">Experiência prática em campo que fortaleceu adaptabilidade, resolução de problemas e autonomia técnica — competências essenciais para ambientes elétricos offshore e suporte técnico subsea/ROV.</p>
+    </div>
+
+    <!-- Grupo Petrópolis -->
+    <div class="exp">
+      <p class="exp-company">Grupo Petrópolis</p>
+      <p class="exp-role">Eletricista Industrial</p>
+      <p class="exp-meta">Dezembro de 2011 – Novembro de 2016 (5 anos) <span class="exp-loc">· Teresópolis, RJ</span></p>
+      <p>Manutenção elétrica industrial em ambiente de produção de grande escala, apoiando a operação contínua de sistemas de potência e processos automatizados.</p>
+      <ul>
+        <li>Manutenção preventiva e corretiva de motores, painéis, sistemas de controle e equipamentos industriais</li>
+        <li>Suporte à distribuição de energia e iniciativas de confiabilidade operacional</li>
+        <li>Participação em atividades de diagnóstico de falhas e ações de melhoria contínua</li>
+        <li>Forte adesão a procedimentos de segurança e normas técnicas</li>
+      </ul>
+      <p class="exp-note">Esta experiência construiu a base em sistemas elétricos industriais e práticas de confiabilidade relevantes para distribuição de energia offshore, suporte a equipamentos subsea e ambientes técnicos de ROV.</p>
+    </div>
+
+    <h2 class="sec-title">Formação Acadêmica</h2>
+
+    <p class="edu-school">Faculdade Católica Salesiana de Macaé</p>
+    <p class="edu-deg">Técnico em Mecatrônica</p>
+    <p class="edu-period">2009 – 2011</p>
+
+  </main>
+
+</div>
+
+</body>
+</html>
